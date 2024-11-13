@@ -17,6 +17,7 @@ public class User {
     private int id;
     @NotNull(message = "Нельзя использовать пустое имя")
     @Size(min = 2, max = 30, message = "Некорректная длина имени")
+    @Pattern(regexp = "^[а-яА-Яa-zA-Z]*$", message = "Некорректное имя")
     private String name;
     @Min(value=1, message = "Возраст должен быть больше нуля")
     private int age;
