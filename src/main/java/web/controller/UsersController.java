@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.model.User;
 import web.service.UserService;
 
+
 @Controller
 public class UsersController {
     private final UserService userService;
@@ -24,6 +25,7 @@ public class UsersController {
         model.addAttribute("users", userService.userList());
         return "users";
     }
+
 
     @PostMapping()
     public String createUser(@Valid @ModelAttribute("user") User user,

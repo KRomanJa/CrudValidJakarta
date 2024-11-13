@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
-import org.hibernate.validator.constraints.Length;
 
 
 import java.util.Objects;
@@ -17,7 +16,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull(message = "Нельзя использовать пустое имя")
-    @Length(min = 2, max = 30, message = "Некорректная длина имени")
+    @Size(min = 2, max = 30, message = "Некорректная длина имени")
     private String name;
     @Min(value=1, message = "Возраст должен быть больше нуля")
     private int age;
